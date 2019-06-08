@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace KeyHooking
 {
@@ -29,13 +27,6 @@ namespace KeyHooking
 
         #endregion
 
-        #region TaskField
-
-        private static Task HookerTask = null;
-        private static CancellationTokenSource HookerTaskcts = null;
-
-        #endregion
-
         #region LowlevelField
 
         private static int WH_KEYBOARD_LL = 13;
@@ -52,15 +43,7 @@ namespace KeyHooking
         /// </summary>
         public static void Keybd_InitHook()
         {
-            HookerTaskcts = new CancellationTokenSource();
-            CancellationToken token = HookerTaskcts.Token;
-            
-            HookerTask = new Task(() =>
-            {
-                hook = SetHook(llkProcedure);
-                Application.Run();
-            }, token);
-            HookerTask.Start();
+            hook = SetHook(llkProcedure);
         }
 
         /// <summary>
@@ -69,10 +52,6 @@ namespace KeyHooking
         public static void Keybd_UnHook()
         {
             UnhookWindowsHookEx(hook);
-            if (HookerTask != null && HookerTaskcts != null)
-            {
-                HookerTaskcts.Cancel();
-            }
         }
 
         #endregion
