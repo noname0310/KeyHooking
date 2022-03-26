@@ -12,8 +12,8 @@ namespace KeyHooking
 
         #region White/Black_ListKeyField
 
-        private static readonly List<Keys> CantPressKeyList = new List<Keys>();
-        private static readonly List<Keys> CanPressKeyList = new List<Keys>();
+        private static readonly List<Keys> CantPressKeyList = new();
+        private static readonly List<Keys> CanPressKeyList = new();
 
         #endregion
 
@@ -157,7 +157,7 @@ namespace KeyHooking
         [DllImport("user32.dll")]
         private static extern bool UnhookWindowsHookEx(IntPtr hhk);
 
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr GetModuleHandle(string lpModuleName);
 
         #endregion
