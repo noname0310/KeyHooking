@@ -18,12 +18,11 @@ namespace KeyHooking
         #endregion
 
         #region EventHandleField
-
-        public delegate void KeyboardHookDelegate(Keys keys);
+        
         /// <summary>
         /// 키보드가 눌렸을떄 눌린 키보드의 키값을 받습니다
         /// </summary>
-        public static event KeyboardHookDelegate OnHookCallback;
+        public static event Action<Keys> OnHookCallback;
 
         #endregion
 
