@@ -12,3 +12,11 @@ C:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\
 C:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.csproj.CoreCompileInputs.cache
 C:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.exe
 C:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.pdb
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\bin\Debug\KeyHooking.exe.config
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\bin\Debug\KeyHooking.exe
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\bin\Debug\KeyHooking.pdb
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.csproj.AssemblyReference.cache
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.csproj.SuggestedBindingRedirects.cache
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.csproj.CoreCompileInputs.cache
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.exe
+D:\noname\Projects\GitHub\KeyHooking\KeyHooking\KeyHooking\KeyHooking\obj\Debug\KeyHooking.pdb
