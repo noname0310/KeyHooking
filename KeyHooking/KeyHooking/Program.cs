@@ -5,7 +5,7 @@ namespace KeyHooking
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
 
@@ -13,7 +13,7 @@ namespace KeyHooking
             KeyHooker.OnHookCallback += KeyHooker_OnHookCallback;
 
             KeyHooker.CantPressKeyAdd(Keys.A);//A키를 블랙리스트에 추가하였으므로 A를 못누르게 됩니다
-
+            
             Application.Run();
         }
 
