@@ -119,14 +119,22 @@ namespace KeyHooking
                 var vkCode = Marshal.ReadInt32(lParam);
                 OnHookCallback?.Invoke((Keys)vkCode);
 
-                if (!CanPressKeyList.Contains((Keys)vkCode))//화이트 리스트에 존재하지 않는다면
+                lock (CanPressKeyList)
                 {
-                    return (IntPtr)1;//키 후킹 탈취
-                }
-
-                if (CantPressKeyList.Contains((Keys)vkCode))//블랙리스트에 항목이 존재한다면
-                {
-                    return (IntPtr)1;//키 후킹 탈취
+                    if (0 < CanPressKeyList.Count)
+                    {
+                        if (!CanPressKeyList.Contains((Keys) vkCode)) //화이트 리스트에 존재하지 않는다면
+                        {
+                            return (IntPtr) 1; //키 후킹 탈취
+                        }
+                    }
+                    else if (0 < CantPressKeyList.Count)
+                    {
+                        if (CantPressKeyList.Contains((Keys) vkCode)) //블랙리스트에 항목이 존재한다면
+                        {
+                            return (IntPtr) 1; //키 후킹 탈취
+                        }
+                    }
                 }
             }
             return CallNextHookEx(IntPtr.Zero, nCode, wParam, lParam);
