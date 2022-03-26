@@ -3,16 +3,16 @@ using System.Windows.Forms;
 
 namespace KeyHooking
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
 
-            KeyHooker.Keybd_InitHook();//필요한 준비를 합니다
+            KeyHooker.KeyboardInitHook();//필요한 준비를 합니다
             KeyHooker.OnHookCallback += KeyHooker_OnHookCallback;
 
-            KeyHooker.CantPressKey_add(Keys.A);//A키를 블랙리스트에 추가하였으므로 A를 못누르게 됩니다
+            KeyHooker.CantPressKeyAdd(Keys.A);//A키를 블랙리스트에 추가하였으므로 A를 못누르게 됩니다
 
             Application.Run();
         }
@@ -24,7 +24,7 @@ namespace KeyHooking
 
         private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
         {
-            KeyHooker.Keybd_UnHook();//꺼질떄 후킹을 빼주지 않으면 원도우에 문제가 생길수 있습니다
+            KeyHooker.KeyboardUnHook();//꺼질떄 후킹을 빼주지 않으면 원도우에 문제가 생길수 있습니다
         }
     }
 }
